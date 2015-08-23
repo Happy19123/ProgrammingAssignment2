@@ -3,9 +3,29 @@
 
 ## Write a short comment describing this function
 
-makeCacheMatrix <- function(x = numeric()) {
+makeCacheMatrix <- function(x = matrix()) {
 
+        c<- NULL
+        
+        set<-function(y){
+                x<<- y
+                #deleting any cache
+                c<<- NULL
+        }
+        
+        get <- function() {
+                x
+        }
+        
+        setInverse <- function(solve) {
+                c <<- solve
+        }
+        
+        getInverse <- function() {
+        c
+        }
 
+        list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
 
 }
 
